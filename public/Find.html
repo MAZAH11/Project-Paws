@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Q7.css">
+    <title>PAWS - Find a Pet</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="Home.html">
+                <img src="file.png" alt="PAWS Logo" style="height: 150px; width: 400px; vertical-align: middle;">
+            </a>
+            <h1 style="display: inline-block; vertical-align: middle; margin-left: 20px;">PAWS</h1>
+            <span id="timer" style="font-size: medium; display: inline-block; vertical-align: middle; margin-left: 40px;"></span>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li class="active"><a href="Find.html">Find a Dog/Cat</a></li>
+                <li><a href="Care.html">Dog/Cat Care</a></li>
+                <li><a href="Give.html">Pet to Give Away</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="CreateAccount.html">Create Account</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>Please fill out this form</h2>
+            <form action="/find-pet" method="POST">
+                <div class="form-group">
+                    <label>Are you interested in a Cat or a Dog?</label>
+                    <input type="radio" id="dog" name="petType" value="dog">
+                    <label for="dog">Dog</label>
+                    <input type="radio" id="cat" name="petType" value="cat">
+                    <label for="cat">Cat</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="breed">What is the desired breed?</label>
+                    <input type="text" id="breed" name="breed">
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Age</label>
+                    <input type="text" id="age" name="age">
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Gender</label>
+                    <input type="radio" id="fem" name="gender" value="female">
+                    <label for="fem">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="dnm" name="gender" value="dnm">
+                    <label for="dnm">Does Not Matter</label>
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <a href="Disclaimer.html">Privacy/Disclaimer Statement</a>
+    </footer>
+
+    <script src="Question7.js"></script>
+</body>
+</html>

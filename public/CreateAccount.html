@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Q7.css">
+    <title>PAWS - Create Account</title>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const error = params.get('error');
+            const success = params.get('success');
+            const messageBox = document.getElementById('message');
+
+            if (error) {
+                if (error === 'invalid') {
+                    messageBox.textContent = 'Invalid credentials. Please follow the proper format.';
+                    messageBox.style.color = 'red';
+                } else if (error === 'exists') {
+                    messageBox.textContent = 'Username already exists. Please choose a different one.';
+                    messageBox.style.color = 'red';
+                }
+            }
+
+            if (success) {
+                messageBox.textContent = 'Registration successful. You can now login at the Pets to Give Away page.';
+                messageBox.style.color = 'green';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="Home.html">
+                <img src="file.png" alt="PAWS Logo" style="height: 150px; width: 400px; vertical-align: middle;">
+            </a>
+            <h1 style="display: inline-block; vertical-align: middle; margin-left: 20px;">PAWS</h1>
+            <span id="timer" style="font-size: medium; display: inline-block; vertical-align: middle; margin-left: 40px;"></span>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Find.html">Find a Dog/Cat</a></li>
+                <li><a href="Care.html">Dog/Cat Care</a></li>
+                <li><a href="Give.html">Pet to Give Away</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li class="active"><a href="CreateAccount.html">Create Account</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>Create a New Account</h2>
+            <p id="message"></p>
+            <form action="/create-account" method="POST">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" value="Create Account">
+                </div>
+            </form>
+            <p>Note: A username can contain letters (both upper and lower case) and digits only. A password must be at least 4 characters long and contain both letters and digits.</p>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <a href="Disclaimer.html">Privacy/Disclaimer Statement</a>
+    </footer>
+</body>
+</html>
